@@ -19,6 +19,11 @@ Route::get('/abount', [HomeController::class, 'abount']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/hello/{name}/{age}', [HomeController::class, 'hello']);
 
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category/create', [CategoryController::class, 'create']);
+
+
+
 
 Route::get('/calculator/{num1}/{num2}', function ($num1, $num2) {
     return "ผลบวกของเลข $num1 และ $num2 คือ " . ($num1 + $num2);
