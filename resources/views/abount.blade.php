@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Bell abount</h1>
+    <a href="/">หน้าแรก</a> | <a href="/abount">เกี่ยวกับ</a> | <a href="/contact">ติดต่อ</a>
 </body>
 </html>

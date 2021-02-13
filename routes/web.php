@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/abount', [HomeController::class, 'abount']);
+
+Route::get('/contact', [HomeController::class, 'contact']);
+
+Route::get('/hello/{name}', function ($name) {
+    return "สวัสดี $name";
 });
 
-Route::get('/abount', function () {
-    return view('abount');
+Route::get('/calculator/{num1}/{num2}', function ($num1, $num2) {
+    return "ผลบวกของเลข $num1 และ $num2 คือ " . ($num1 + $num2);
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
