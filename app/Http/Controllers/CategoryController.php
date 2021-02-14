@@ -32,4 +32,32 @@ class CategoryController extends Controller
 
         return redirect('/category');
     }
+    public function edit($id)
+    {
+        // SELECT * FROM category WHERE id = '$id'
+
+        $category = Category::find($id);
+
+        $data = [
+            'category' => $category
+        ];
+        return view('category.edit', $data);
+    }
+    public function update(Request $request, $id)
+    {
+        $name = $request->input('name');
+        //UPDATE category SET name = '$name' WHERE id = '$id';
+        $category = Category::find($id);
+        $category->name = $name;
+        $category->save();
+
+        return redirect('/category');
+    }
+    public function delete($id)
+    {
+        // DELETE FORM category WHERE id = '$id'
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/category');
+    }
 }
