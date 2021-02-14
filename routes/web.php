@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -41,10 +42,10 @@ Route::post('/post/store', [PostController::class, 'store']);
 Route::get('/post/edit/{id}', [PostController::class, 'edit']);
 Route::post('/post/update/{id}', [PostController::class, 'update']);
 
-Route::get('/aunt/login', [AuntController::class, 'login']);
-Route::post('/aunt/doLogin', [AuntController::class, 'doLogin']);
-Route::get('/aunt/register', [AuntController::class, 'register']);
-Route::post('/aunt/doRegister', [AuntController::class, 'doRegister']);
+Route::get('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/doLogin', [AuthController::class, 'doLogin']);
+Route::get('/auth/register', [AuthControllerontroller::class, 'register']);
+Route::post('/auth/doRegister', [AuthController::class, 'doRegister']);
 
 Route::get('/calculator/{num1}/{num2}', function ($num1, $num2) {
     return "ผลบวกของเลข $num1 และ $num2 คือ " . ($num1 + $num2);
